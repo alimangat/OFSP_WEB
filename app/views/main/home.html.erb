@@ -1,0 +1,79 @@
+<style>
+  header {
+      background-image: url('/assets/Main banner.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: auto;
+      text-align: center;
+      margin-bottom: 25px;
+  }
+
+  footer {
+    background-color: #068ACA;
+    text-align: center;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding: 5px; /* Adjust the padding as needed */
+    margin-top: 25px;
+}
+
+footer a {
+    color: white; /* Style the link color */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+
+  body {
+      margin: auto;        
+      min-height: 100vh; /* Ensure the body takes at least the full height of the viewport. */
+      display: flex;
+      flex-direction: column;
+  } 
+  .container {
+            flex: 2; /* Make the container flex to occupy remaining vertical space. */
+        }
+
+</style>
+<body>
+    <div class="<div class="container">
+      <header>
+        <img src="/assets/Main banner.jpg" alt="banner" style="width: 100%; height: auto;">
+      </header>
+    </div>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-sm-4">
+          <div>
+            <h5 style='text-align:center; font-family: "Times New Roman";margin-top: 5px; font-size: 20px;'>Welcome</h5>
+            <h6 style="text-align: center; font-size: 20px; font-family:noto ; color:#068ACA">Orphan Care Family Support Program</h6>
+            <p style="text-align:center; font-size: 15px;">"Orphans are the only ones who get to choose their fathers, and they love them twice as much."</p>
+          </div>
+          <%= form_with model: @user, url: login_path, method: :post do |form| %>
+            <div class="mb-3">
+              <%= form.text_field :email, class: "form-control", id: "exampleFormControlInput1", placeholder: "Email address" %>
+            </div>
+            <div class="mb-3">
+              <%= form.password_field :password, class: "form-control", id: "exampleFormControlInput2", placeholder: "Password" %>
+            </div>
+            <div class="mb-3"> <!-- Add margin to this div to create space -->
+              <%= link_to "Forget your password?", password_reset_path, class: "mt-3 text-center" %>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <%= form.submit "Sign In", class: "btn btn-primary center" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="<div class="container">
+      <footer>
+        <p><a href="https://alkhidmat.org" target="_blank">alkhidmat.org</a></p>
+      </footer>
+    </div> 
+  </div>
+</body>  
